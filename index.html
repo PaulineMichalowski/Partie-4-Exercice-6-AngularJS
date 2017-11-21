@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <title>Exercice 6</title>
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="myFunc1()">Premier paragraphe</button>
+    <button ng-click="myFunc2()">Deuxième paragraphe</button>
+    <div ng-show="firstInput">
+      <p>Premier paragraphe</p>
+    </div>
+    <div ng-show="secondInput">
+      <p>Deuxième paragraphe</p>
+    </div>
+  </div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.firstInput = false;
+    $scope.myFunc1 = function() {
+      $scope.firstInput = !$scope.firstInput;
+    }
+    $scope.secondInput = false;
+    $scope.myFunc2 = function() {
+      $scope.secondInput = !$scope.secondInput;
+    };
+  });
+  </script>
+</body>
+</html>
